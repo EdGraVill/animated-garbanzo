@@ -18,3 +18,8 @@ export const treeFileNameSelector = createSelector(
   treeRootStateSelector,
   (tree) => tree.fileName,
 );
+
+export const isTreeModifiedSelector = createSelector(
+  treeRootStateSelector,
+  (tree) => JSON.stringify(tree.tree) !== JSON.stringify(tree.originalTree),
+);
