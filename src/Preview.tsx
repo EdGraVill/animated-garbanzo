@@ -13,11 +13,13 @@ const Preview: FC = () => {
 
   return (
     <>
-      <span className="preview__title">
-        Editing <span className="preview__title--fileName">"{fileName}"</span> {isTreeModified && (
-          <span className="preview__title--modified">(Modified)</span>
-        )}
-      </span>
+      {tree && (
+        <span className="preview__title">
+          Editing <span className="preview__title--fileName">"{fileName}"</span> {isTreeModified && (
+            <span className="preview__title--modified">(Modified)</span>
+          )}
+        </span>
+      )}
       <div className={cn(['preview__container', { 'preview__container--error': error }])}>
         {error && (
           <div className="preview__error">{error}</div>
@@ -29,7 +31,7 @@ const Preview: FC = () => {
           </div>
         ) : (
           <p className="preview__noTree">
-            Please, select a file and on "Fetch" button to load the content
+            Please, select a file and click on "Fetch" button to load the content
           </p>
         )}
       </div>
