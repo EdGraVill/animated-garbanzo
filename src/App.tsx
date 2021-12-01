@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import InputFile from './InputFile';
 import { loadStore } from './store';
 import { Provider } from 'react-redux';
+import Preview from './Preview';
 
 const App: FC = () => {
   const store = useMemo(() => loadStore(), []);
@@ -11,6 +12,7 @@ const App: FC = () => {
     <Provider store={store}>
       <div className="App">
         <InputFile />
+        <Preview />
       </div>
     </Provider>
   );

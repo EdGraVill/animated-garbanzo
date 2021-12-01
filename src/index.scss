@@ -1,3 +1,9 @@
+:root {
+  --red: #e74c3c;
+  --white: #ecf0f1;
+  --gray: #95a5a6;
+}
+
 .inputFile {
   &__container {
     align-items: flex-start;
@@ -6,25 +12,69 @@
   }
 
   &__fileName {
+    border: 1px solid var(--gray);
     display: flex;
-    justify-content: flex-end;
-    border: 1px solid gray;
     font-size: 1rem;
-    line-height: 1rem;
     height: 1rem;
+    justify-content: flex-end;
+    line-height: 1rem;
+    margin: .5rem 0;
     padding: .2rem .5rem;
-    width: 15rem;
     overflow: hidden;
     text-overflow: ellipsis;
+    width: 15rem;
     white-space: nowrap;
-    margin: .5rem 0;
 
     &--placeholder {
-      color: gray;
+      color: var(--gray);
     }
   }
 
   &__filePicker {
     display: none;
+  }
+}
+
+.preview {
+  &__container {
+    align-items: center;
+    border: 4px solid transparent;
+    padding: 2rem 0 0 0;
+
+    &--error {
+      border: 4px solid var(--red);
+      padding: 0;
+    }
+  }
+
+  &__error {
+    align-items: center;
+    background-color: var(--red);
+    color: var(--white);
+    display: flex;
+    font-weight: bold;
+    height: 2rem;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    width: 100%;
+  }
+
+  &__content {
+    align-items: stretch;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 0 2rem 2rem 2rem;
+
+    & * {
+      flex: 1;
+    }
+  }
+}
+
+.editor {
+  &__title {
+    font-size: 1.3rem;
   }
 }
